@@ -18,7 +18,7 @@ function PortfolioLayout() {
         <Link to={`${prefix}/about`} style={{ marginRight: 10 }}>
           About
         </Link>
-        <Link to={`${prefix}/contact`}>Contact</Link>
+        <Link to={`${prefix}/contact`}>Contact Me</Link>
       </nav>
       <Outlet />
     </>

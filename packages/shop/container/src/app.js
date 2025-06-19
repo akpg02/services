@@ -30,7 +30,7 @@ function ShopLayout() {
 export default function ShopPage() {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading...Container</div>}>
         <Routes>
           <Route element={<ShopLayout />}>
             <Route index element={<Navigate to="products" replace />} />

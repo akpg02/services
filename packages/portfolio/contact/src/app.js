@@ -4,7 +4,7 @@ export default function ContactPage() {
   return (
     <div>
       <h2>Contact Me</h2>
-      <p> Email template goes here.</p>
+      <p> Email template goes here. aojfoasufousa</p>
     </div>
   );
 }
