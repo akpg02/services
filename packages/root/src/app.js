@@ -13,7 +13,12 @@ export default function App() {
         <Link to="/shop" replace style={{ marginRight: 10 }} reloadDocument>
           Shop
         </Link>
-        <Link to="/portfolio" replace reloadDocument>
+        <Link
+          to="/portfolio"
+          replace
+          style={{ marginRight: 10 }}
+          reloadDocument
+        >
           Portfolio
         </Link>
         <Link to="/blog" replace reloadDocument>
