@@ -20,7 +20,7 @@ const prodConfig = {
       remotes: {
         author: `author@${domain}/blog/author/latest/remoteEntry.js`,
         categories: `categories@${domain}/blog/categories/latest/remoteEntry.js`,
-        comments: `comments@${domain}/blog/comments/latestremoteEntry.js`,
+        comments: `comments@${domain}/blog/comments/latest/remoteEntry.js`,
         newsletters: `newsletters@${domain}/blog/newsletters/latest/remoteEntry.js`,
         post: `post@${domain}/blog/post/latest/remoteEntry.js`,
         posts: `posts@${domain}/blog/posts/latest/remoteEntry.js`,
