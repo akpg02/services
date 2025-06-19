@@ -5,11 +5,11 @@ on:
     branches:
       - master
     paths:
-      - "packages/blog/posts/**"
+      - "packages/blog/posts-list/**"
 
 defaults:
   run:
-    working-directory: packages/blog/posts
+    working-directory: packages/blog/posts-list
 
 jobs:
   build:
