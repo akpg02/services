@@ -16,12 +16,10 @@ const prodConfig = {
     new ModuleFederationPlugin({
       name: "root",
       filename: "remoteEntry.js",
-
       remotes: {
         portfolio: `portfolio@${domain}/portfolio/container/latest/remoteEntry.js`,
         shop: `shop@${domain}/shop/container/latest/remoteEntry.js`,
       },
-
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },
