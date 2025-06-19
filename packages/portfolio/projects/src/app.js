@@ -4,7 +4,7 @@ export default function ProjectsPage() {
   return (
     <div>
       <h2>Projects</h2>
-      <p>Your project showcase goes here. sadfijasoifhsoa</p>
+      <p>Your project showcase goes here.</p>
     </div>
   );
 }

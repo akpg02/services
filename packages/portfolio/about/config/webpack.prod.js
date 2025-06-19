@@ -15,7 +15,7 @@ const prodConfig = {
       name: "about",
       filename: "remoteEntry.js",
       exposes: {
-        "./AuthApp": "./src/bootstrap",
+        "./AboutApp": "./src/app",
       },
       shared: {
         react: { singleton: true, eager: true },
