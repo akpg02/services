@@ -5,11 +5,11 @@ on:
     branches:
       - master
     paths:
-      - "portfolio/about/**"
+      - "packages/portfolio/about/**"
 
 defaults:
   run:
-    working-directory: portfolio/about
+    working-directory: packages/portfolio/about
 
 jobs:
   build:

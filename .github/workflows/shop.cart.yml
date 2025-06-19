@@ -5,11 +5,11 @@ on:
     branches:
       - master
     paths:
-      - "shop/cart/**"
+      - "packages/shop/cart/**"
 
 defaults:
   run:
-    working-directory: shop/cart
+    working-directory: packages/shop/cart
 
 jobs:
   build:

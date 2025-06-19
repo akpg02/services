@@ -5,11 +5,11 @@ on:
     branches:
       - master
     paths:
-      - "root/**"
+      - "packages/root/**"
 
 defaults:
   run:
-    working-directory: root/
+    working-directory: packages/root/
 
 jobs:
   build:

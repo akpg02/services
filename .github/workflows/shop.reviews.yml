@@ -5,11 +5,11 @@ on:
     branches:
       - master
     paths:
-      - "shop/reviews/**"
+      - "packages/shop/reviews/**"
 
 defaults:
   run:
-    working-directory: shop/reviews
+    working-directory: packages/shop/reviews
 
 jobs:
   build:
