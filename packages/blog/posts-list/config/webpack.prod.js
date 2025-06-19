@@ -1,22 +1,22 @@
 const { merge } = require("webpack-merge");
-const { ModuleFederationPlugin } = require("webpack").container;
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const commonConfig = require("./webpack.common");
 
-const devConfig = {
-  mode: "development",
-  entry: "./src/index.js",
-  devServer: {
-    port: 3003,
-    historyApiFallback: {
-      rewrites: [{ from: /^\/shop/, to: "/index.html" }],
-    },
+const domain = process.env.PRODUCTION_DOMAIN;
+
+const prodConfig = {
+  mode: "production",
+  output: {
+    filename: "[name].[contenthash].js",
+    publicPath: `${domain}/blog/posts/latest/`,
   },
-  output: { publicPath: "auto" },
   plugins: [
     new ModuleFederationPlugin({
-      name: "dashboard",
+      name: "posts",
       filename: "remoteEntry.js",
-      exposes: { "./DashboardApp": "./src/app" },
+      exposes: {
+        "./PostsApp": "./src/app",
+      },
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },
@@ -27,4 +27,4 @@ const devConfig = {
   ],
 };
 
-module.exports = merge(commonConfig, devConfig);
+module.exports = merge(commonConfig, prodConfig);

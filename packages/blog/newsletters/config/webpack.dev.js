@@ -6,17 +6,15 @@ const devConfig = {
   mode: "development",
   entry: "./src/index.js",
   devServer: {
-    port: 3003,
-    historyApiFallback: {
-      rewrites: [{ from: /^\/shop/, to: "/index.html" }],
-    },
+    port: 3014,
+    historyApiFallback: true,
   },
   output: { publicPath: "auto" },
   plugins: [
     new ModuleFederationPlugin({
-      name: "dashboard",
+      name: "newsletters",
       filename: "remoteEntry.js",
-      exposes: { "./DashboardApp": "./src/app" },
+      exposes: { "./NewlettersApp": "./src/app" },
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },
