@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <div>
       <h2>Blog Post</h2>
-      <p>Post details go here</p>
+      <p>Post details go here ajvodjvojoaj</p>
     </div>
   );
 }
