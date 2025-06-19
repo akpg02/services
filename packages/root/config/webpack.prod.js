@@ -10,7 +10,7 @@ const prodConfig = {
   entry: "./src/index.js",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: `${domain}/root/latest/`,
+    publicPath: `/root/latest/`,
   },
   plugins: [
     new ModuleFederationPlugin({
