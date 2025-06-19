@@ -17,7 +17,7 @@ export default function App() {
         </Link>
       </nav>
 
-      <Suspense fallback={<div>Loading root… I have arrived!!</div>}>
+      <Suspense fallback={<div>Loading root…</div>}>
         <Routes>
           <Route index element={<div>Root home</div>} />
           <Route path="shop/*" element={<ShopApp />} />
