@@ -18,8 +18,8 @@ const prodConfig = {
       filename: "remoteEntry.js",
 
       remotes: {
-        portfolio: `portfolio@${domain}/portfolio/latest/remoteEntry.js`,
-        shop: `shop@${domain}/shop/latest/remoteEntry.js`,
+        portfolio: `portfolio@${domain}/portfolio/container/latest/remoteEntry.js`,
+        shop: `shop@${domain}/shop/container/latest/remoteEntry.js`,
       },
 
       shared: {
