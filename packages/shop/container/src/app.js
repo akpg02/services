@@ -27,13 +27,18 @@ function ShopLayout() {
   );
 }
 
+// <Navigate to="products" replace />
+
 export default function ShopPage() {
   return (
     <>
       <Suspense fallback={<div>Loading...Container</div>}>
         <Routes>
           <Route element={<ShopLayout />}>
-            <Route index element={<Navigate to="products" replace />} />
+            <Route
+              index
+              element={<div>This will be the shop landing page.</div>}
+            />
             <Route path="products" element={<ProductsPage />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="dashboard" element={<DashboardPage />} />

@@ -16,10 +16,10 @@ const prodConfig = {
       filename: "remoteEntry.js",
       exposes: { "./ShopApp": "./src/app" },
       remotes: {
-        products: `products@${domain}/products/latest/remoteEntry.js`,
-        cart: `cart@${domain}/cart/latest/remoteEntry.js`,
-        dashboard: `dashboard@${domain}/dashboard/latest/remoteEntry.js`,
-        reviews: `reviews@${domain}/reviews/latest/remoteEntry.js`,
+        products: `products@${domain}/shop/products/latest/remoteEntry.js`,
+        cart: `cart@${domain}/shop/cart/latest/remoteEntry.js`,
+        dashboard: `dashboard@${domain}/shop/dashboard/latest/remoteEntry.js`,
+        reviews: `reviews@${domain}/shop/reviews/latest/remoteEntry.js`,
       },
       shared: {
         react: { singleton: true, eager: true },

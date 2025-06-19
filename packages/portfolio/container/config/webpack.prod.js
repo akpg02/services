@@ -16,9 +16,9 @@ const prodConfig = {
       filename: "remoteEntry.js",
       exposes: { "./PortfolioApp": "./src/app" },
       remotes: {
-        projects: `projects@${domain}/projects/latest/remoteEntry.js`,
-        about: `about@${domain}/about/latest/remoteEntry.js`,
-        contact: `contact@${domain}/contact/latest/remoteEntry.js`,
+        projects: `projects@${domain}/portfolio/projects/latest/remoteEntry.js`,
+        about: `about@${domain}/portfolio/about/latest/remoteEntry.js`,
+        contact: `contact@${domain}/portfolio/contact/latest/remoteEntry.js`,
       },
       shared: {
         react: { singleton: true, eager: true },
