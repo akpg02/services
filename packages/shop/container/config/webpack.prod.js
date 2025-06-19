@@ -12,7 +12,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
+      name: "shop",
       filename: "remoteEntry.js",
       exposes: { "./ShopApp": "./src/app" },
       remotes: {

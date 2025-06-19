@@ -8,11 +8,11 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: `${domain}/portfolio/container/latest/`,
+    publicPath: `${domain}/projects/container/latest/`,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
+      name: "portfolio",
       filename: "remoteEntry.js",
       exposes: { "./PortfolioApp": "./src/app" },
       remotes: {
