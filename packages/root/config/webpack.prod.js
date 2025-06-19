@@ -19,6 +19,7 @@ const prodConfig = {
       remotes: {
         portfolio: `portfolio@${domain}/portfolio/container/latest/remoteEntry.js`,
         shop: `shop@${domain}/shop/container/latest/remoteEntry.js`,
+        blog: `blog@${domain}/blog/container/latest/remoteEntry.js`,
       },
       shared: {
         react: { singleton: true, eager: true },
