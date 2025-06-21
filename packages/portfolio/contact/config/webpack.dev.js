@@ -8,11 +8,10 @@ const devConfig = {
   entry: "./src/index.js",
   devServer: {
     port: 3008,
+    headers: { "Access-Control-Allow-Origin": "*" },
     historyApiFallback: {
-      rewrites: [
-        { from: /^\/portfolio/, to: '/index.html' }
-      ]
-    }
+      rewrites: [{ from: /^\/portfolio/, to: "/index.html" }],
+    },
   },
   output: { publicPath: "auto" },
   plugins: [

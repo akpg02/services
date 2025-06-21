@@ -1,13 +1,15 @@
 const { merge } = require("webpack-merge");
-const { ModuleFederationPlugin } = require("webpack").container;
+const {
+  container: { ModuleFederationPlugin },
+} = require("webpack");
 const commonConfig = require("./webpack.common");
-const packageJson = require("../package.json");
 
 const devConfig = {
   mode: "development",
   entry: "./src/index.js",
   devServer: {
     port: 3000,
+    headers: { "Access-Control-Allow-Origin": "*" },
     historyApiFallback: true,
   },
   output: { publicPath: "auto" },

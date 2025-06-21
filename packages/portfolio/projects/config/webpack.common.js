@@ -16,7 +16,18 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                config: "./postcss.config.js",
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,

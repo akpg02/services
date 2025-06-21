@@ -7,6 +7,7 @@ const devConfig = {
   entry: "./src/index.js",
   devServer: {
     port: 3011,
+    headers: { "Access-Control-Allow-Origin": "*" },
     historyApiFallback: true,
   },
   output: { publicPath: "auto" },

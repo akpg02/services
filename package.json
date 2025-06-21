@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/blog/*",
+    "packages/portfolio/*",
+    "packages/shop/*",
+    "packages/root"
+  ],
+  "scripts": {
+    "start:blog-author": "npm --workspace=packages/blog/author        run start",
+    "start:blog-categories": "npm --workspace=packages/blog/categories   run start",
+    "start:blog-comments": "npm --workspace=packages/blog/comments     run start",
+    "start:blog-container": "npm --workspace=packages/blog/container    run start",
+    "start:blog-newsletters": "npm --workspace=packages/blog/newsletters  run start",
+    "start:blog-post-details": "npm --workspace=packages/blog/post-details run start",
+    "start:blog-posts-list": "npm --workspace=packages/blog/posts-list   run start",
+    "start:blog-related-posts": "npm --workspace=packages/blog/related-posts run start",
+    "start:blog-search": "npm --workspace=packages/blog/search       run start",
+    "start:blog-social-sharing": "npm --workspace=packages/blog/social-sharing run start",
+    "start:portfolio-about": "npm --workspace=packages/portfolio/about     run start",
+    "start:portfolio-contact": "npm --workspace=packages/portfolio/contact   run start",
+    "start:portfolio-container": "npm --workspace=packages/portfolio/container run start",
+    "start:portfolio-projects": "npm --workspace=packages/portfolio/projects  run start",
+    "start:shop-cart": "npm --workspace=packages/shop/cart      run start",
+    "start:shop-container": "npm --workspace=packages/shop/container run start",
+    "start:shop-dashboard": "npm --workspace=packages/shop/dashboard run start",
+    "start:shop-products": "npm --workspace=packages/shop/products run start",
+    "start:shop-reviews": "npm --workspace=packages/shop/reviews   run start",
+    "start:root": "npm --workspace=packages/root           run start",
+    "start": "concurrently \"npm run start:blog-author\" \"npm run start:blog-categories\" \"npm run start:blog-comments\" \"npm run start:blog-container\" \"npm run start:blog-newsletters\" \"npm run start:blog-post-details\" \"npm run start:blog-posts-list\" \"npm run start:blog-related-posts\" \"npm run start:blog-search\" \"npm run start:blog-social-sharing\" \"npm run start:portfolio-about\" \"npm run start:portfolio-contact\" \"npm run start:portfolio-container\" \"npm run start:portfolio-projects\" \"npm run start:shop-cart\" \"npm run start:shop-container\" \"npm run start:shop-dashboard\"  \"npm run start:shop-products\" \"npm run start:shop-reviews\" \"npm run start:root\"",
+    "start:all": "npm-run-all --parallel \"start:blog-*\" \"start:portfolio-*\" \"start:shop-*\" \"start:root\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "npm-run-all": "^4.1.5"
+  }
+}

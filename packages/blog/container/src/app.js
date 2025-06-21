@@ -4,7 +4,7 @@ import { Routes, Route, Link, Outlet } from "react-router-dom";
 const Author = lazy(() => import("author/AuthorApp"));
 const Categories = lazy(() => import("categories/CategoriesApp"));
 const Comments = lazy(() => import("comments/CommentsApp"));
-const Newsletters = lazy(() => import("newsletters/NewslettersApp"));
+const Newsletters = lazy(() => import("newsletters/NewlettersApp"));
 const Post = lazy(() => import("post/PostApp"));
 const Posts = lazy(() => import("posts/PostsApp"));
 const Related = lazy(() => import("related/RelatedApp"));
@@ -17,27 +17,27 @@ function BlogLayout() {
     <>
       <nav style={{ padding: 10, borderBottom: "1px solid #ccc" }}>
         <Link to={`${prefix}/categories`} style={{ marginRight: 10 }}>
-          categories
+          Categories
         </Link>
         <Link to={`${prefix}/comments`} style={{ marginRight: 10 }}>
-          comments
+          Comments
         </Link>
         <Link to={`${prefix}/post`} style={{ marginRight: 10 }}>
-          post
+          Post
         </Link>
         <Link to={`${prefix}/posts`} style={{ marginRight: 10 }}>
-          posts
+          Posts
         </Link>
         <Link to={`${prefix}/related`} style={{ marginRight: 10 }}>
-          related
+          Related
         </Link>
         <Link to={`${prefix}/search`} style={{ marginRight: 10 }}>
-          search
+          Search
         </Link>
         <Link to={`${prefix}/social`} style={{ marginRight: 10 }}>
-          social
+          Social
         </Link>
-        <Link to={`${prefix}/newsletters`}>newsletters</Link>
+        <Link to={`${prefix}/newsletters`}>Newsletters</Link>
       </nav>
       <Outlet />
     </>
