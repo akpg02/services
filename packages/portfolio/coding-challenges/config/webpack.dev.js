@@ -5,24 +5,18 @@ const commonConfig = require("./webpack.common");
 const devConfig = {
   mode: "development",
   entry: "./src/index.js",
-  output: { publicPath: "http://localhost:3005/" },
   devServer: {
-    port: 3005,
+    port: 3021,
     hot: true,
     headers: { "Access-Control-Allow-Origin": "*" },
     historyApiFallback: true,
   },
+  output: { publicPath: "auto" },
   plugins: [
     new ModuleFederationPlugin({
-      name: "portfolio",
+      name: "challenges",
       filename: "remoteEntry.js",
-      exposes: { "./PortfolioApp": "./src/app" },
-      remotes: {
-        projects: "projects@http://localhost:3006/remoteEntry.js",
-        about: "about@http://localhost:3007/remoteEntry.js",
-        contact: "contact@http://localhost:3008/remoteEntry.js",
-        challenges: "challenges@http://localhost:3021/remoteEntry.js",
-      },
+      exposes: { "./CodingChallengesApp": "./src/app" },
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },

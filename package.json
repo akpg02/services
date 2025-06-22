@@ -23,13 +23,14 @@
     "start:portfolio-contact": "npm --workspace=packages/portfolio/contact run start",
     "start:portfolio-container": "npm --workspace=packages/portfolio/container run start",
     "start:portfolio-projects": "npm --workspace=packages/portfolio/projects run start",
+    "start:portfolio-coding": "npm --workspace=packages/portfolio/coding-challenges run start",
     "start:shop-cart": "npm --workspace=packages/shop/cart run start",
     "start:shop-container": "npm --workspace=packages/shop/container run start",
     "start:shop-dashboard": "npm --workspace=packages/shop/dashboard run start",
     "start:shop-products": "npm --workspace=packages/shop/products run start",
     "start:shop-reviews": "npm --workspace=packages/shop/reviews run start",
     "start:root": "npm --workspace=packages/root run start",
-    "start:all": "concurrently \"npm run start:auth\" \"npm run start:blog-author\" \"npm run start:blog-categories\" \"npm run start:blog-comments\" \"npm run start:blog-container\" \"npm run start:blog-newsletters\" \"npm run start:blog-post-details\" \"npm run start:blog-posts-list\" \"npm run start:blog-related-posts\" \"npm run start:blog-search\" \"npm run start:blog-social-sharing\" \"npm run start:portfolio-about\" \"npm run start:portfolio-contact\" \"npm run start:portfolio-container\" \"npm run start:portfolio-projects\" \"npm run start:shop-cart\" \"npm run start:shop-container\" \"npm run start:shop-dashboard\"  \"npm run start:shop-products\" \"npm run start:shop-reviews\" \"npm run start:root\"",
+    "start:all": "concurrently \"npm run start:auth\" \"npm run start:blog-author\" \"npm run start:blog-categories\" \"npm run start:blog-comments\" \"npm run start:blog-container\" \"npm run start:blog-newsletters\" \"npm run start:blog-post-details\" \"npm run start:blog-posts-list\" \"npm run start:blog-related-posts\" \"npm run start:blog-search\" \"npm run start:blog-social-sharing\" \"npm run start:portfolio-about\" \"npm run start:portfolio-contact\" \"npm run start:portfolio-container\" \"npm run start:portfolio-projects\" \"npm run start:portfolio-coding\" \"npm run start:shop-cart\" \"npm run start:shop-container\" \"npm run start:shop-dashboard\"  \"npm run start:shop-products\" \"npm run start:shop-reviews\" \"npm run start:root\"",
     "start": "npm-run-all --parallel \"start:auth\" \"start:blog-*\" \"start:portfolio-*\" \"start:shop-*\" \"start:root\""
   },
   "devDependencies": {

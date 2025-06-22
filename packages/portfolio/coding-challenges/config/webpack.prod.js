@@ -8,18 +8,14 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: `${domain}/portfolio/container/latest/`,
+    publicPath: `${domain}/portfolio/challenges/latest/`,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "portfolio",
+      name: "challenges",
       filename: "remoteEntry.js",
-      exposes: { "./PortfolioApp": "./src/app" },
-      remotes: {
-        projects: `projects@${domain}/portfolio/projects/latest/remoteEntry.js`,
-        about: `about@${domain}/portfolio/about/latest/remoteEntry.js`,
-        contact: `contact@${domain}/portfolio/contact/latest/remoteEntry.js`,
-        challenges: `challenges@${domain}/portfolio/challenges/latest/remoteEntry.js`,
+      exposes: {
+        "./ChallengesApp": "./src/app",
       },
       shared: {
         react: { singleton: true, eager: true },
