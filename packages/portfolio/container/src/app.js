@@ -4,7 +4,7 @@ import { Routes, Route, Link, Outlet } from "react-router-dom";
 const Projects = lazy(() => import("projects/ProjectsApp"));
 const About = lazy(() => import("about/AboutApp"));
 const Contact = lazy(() => import("contact/ContactApp"));
-const Challenges = lazy(() => import("challenges/CodingChallengesApp"));
+const Challenges = lazy(() => import("challenges/ChallengesApp"));
 
 function PortfolioLayout() {
   const prefix = window.location.pathname.startsWith("/portfolio")

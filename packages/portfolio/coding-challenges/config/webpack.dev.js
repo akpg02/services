@@ -16,7 +16,7 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: "challenges",
       filename: "remoteEntry.js",
-      exposes: { "./CodingChallengesApp": "./src/app" },
+      exposes: { "./ChallengesApp": "./src/app" },
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },
