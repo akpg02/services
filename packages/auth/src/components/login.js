@@ -12,6 +12,7 @@ export default function SignInPage({ onSignIn }) {
     e.preventDefault();
     // TODO: integrate authentication logic
     console.log({ email, password });
+    console.log("handle submit");
     navigate("/");
   };
   const prefix = window.location.pathname.startsWith("/auth") ? "/auth" : "";
