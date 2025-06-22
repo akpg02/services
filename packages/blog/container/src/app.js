@@ -4,7 +4,7 @@ import { Routes, Route, Link, Outlet } from "react-router-dom";
 const Author = lazy(() => import("author/AuthorApp"));
 const Categories = lazy(() => import("categories/CategoriesApp"));
 const Comments = lazy(() => import("comments/CommentsApp"));
-const Newsletters = lazy(() => import("newsletters/NewlettersApp"));
+const Newsletters = lazy(() => import("newsletters/NewslettersApp"));
 const Post = lazy(() => import("post/PostApp"));
 const Posts = lazy(() => import("posts/PostsApp"));
 const Related = lazy(() => import("related/RelatedApp"));

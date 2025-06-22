@@ -18,7 +18,7 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: "newsletters",
       filename: "remoteEntry.js",
-      exposes: { "./NewlettersApp": "./src/app" },
+      exposes: { "./NewslettersApp": "./src/app" },
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },
