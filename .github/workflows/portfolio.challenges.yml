@@ -5,11 +5,11 @@ on:
     branches:
       - master
     paths:
-      - "packages/portfolio/challenges/**"
+      - "packages/portfolio/coding-challenges/**"
 
 defaults:
   run:
-    working-directory: packages/portfolio/challenges
+    working-directory: packages/portfolio/coding-challenges
 
 jobs:
   build:
