@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 
-export default function SignUpPage() {
+export default function SignUpPage({ onSignIn }) {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -65,6 +65,7 @@ export default function SignUpPage() {
 
           <button
             type="submit"
+            onClick={onSignIn}
             className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
           >
             Create Account

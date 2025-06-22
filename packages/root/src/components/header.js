@@ -2,7 +2,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ isSignedIn, onSignOut }) {
+  const handleLogout = () => {
+    if (isSignedIn && onSignOut) {
+      onSignOut();
+    }
+  };
   return (
     <header className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
@@ -40,10 +45,11 @@ export default function Header() {
         </div>
         <div>
           <Link
-            to="/auth/login"
+            to={isSignedIn ? "/" : "/auth/login"}
+            onClick={handleLogout}
             className="inline-block px-4 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
           >
-            Log In
+            {isSignedIn ? "LOGOUT" : "LOGIN"}
           </Link>
         </div>
       </div>

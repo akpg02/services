@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 // import Header from '../components/Header';
 
-export default function SignInPage() {
+export default function SignInPage({ onSignIn }) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -52,6 +52,7 @@ export default function SignInPage() {
 
           <button
             type="submit"
+            onClick={onSignIn}
             className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
           >
             Login
