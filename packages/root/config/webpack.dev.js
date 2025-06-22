@@ -12,6 +12,7 @@ const devConfig = {
   entry: "./src/index.js",
   devServer: {
     port: 3009,
+    hot: true,
     headers: { "Access-Control-Allow-Origin": "*" },
     historyApiFallback: true,
     client: {
@@ -30,6 +31,7 @@ const devConfig = {
         portfolio: "portfolio@http://localhost:3005/remoteEntry.js",
         shop: "shop@http://localhost:3000/remoteEntry.js",
         blog: "blog@http://localhost:3010/remoteEntry.js",
+        auth: "auth@http://localhost:3020/remoteEntry.js",
       },
       shared: {
         react: { singleton: true, eager: true },

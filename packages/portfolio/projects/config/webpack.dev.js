@@ -9,6 +9,7 @@ const devConfig = {
   output: { publicPath: "auto" },
   devServer: {
     port: 3006,
+    hot: true,
     headers: { "Access-Control-Allow-Origin": "*" },
     historyApiFallback: true,
   },

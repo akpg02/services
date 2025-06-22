@@ -9,6 +9,7 @@ const devConfig = {
   entry: "./src/index.js",
   devServer: {
     port: 3003,
+    hot: true,
     headers: { "Access-Control-Allow-Origin": "*" },
     historyApiFallback: {
       rewrites: [{ from: /^\/shop/, to: "/index.html" }],

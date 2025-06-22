@@ -8,6 +8,7 @@ const devConfig = {
   output: { publicPath: "http://localhost:3005/" },
   devServer: {
     port: 3005,
+    hot: true,
     headers: { "Access-Control-Allow-Origin": "*" },
     historyApiFallback: true,
   },
