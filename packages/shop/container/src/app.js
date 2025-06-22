@@ -1,5 +1,12 @@
-import React, { lazy, Suspense } from "react";
-import { Routes, Route, Link, Navigate, Outlet } from "react-router-dom";
+import React, { lazy, Suspense, useEffect } from "react";
+import {
+  Routes,
+  Route,
+  Link,
+  Navigate,
+  Outlet,
+  useNavigate,
+} from "react-router-dom";
 
 const ProductsPage = lazy(() => import("products/ProductsApp"));
 const CartPage = lazy(() => import("cart/CartApp"));
@@ -27,21 +34,36 @@ function ShopLayout() {
   );
 }
 
-// <Navigate to="products" replace />
+export default function ShopPage({ isSignedIn }) {
+  const navigate = useNavigate();
 
-export default function ShopPage() {
+  useEffect(() => {
+    if (isSignedIn) {
+      navigate("/dashboard");
+    }
+  }, [isSignedIn, navigate]);
+
   return (
     <>
       <Suspense fallback={<div>Loading...Container</div>}>
         <Routes>
-          <Route element={<ShopLayout />}>
+          <Route path="" element={<ShopLayout />}>
             <Route
               index
               element={<div>This will be the shop landing page.</div>}
             />
             <Route path="products" element={<ProductsPage />} />
             <Route path="cart" element={<CartPage />} />
-            <Route path="dashboard" element={<DashboardPage />} />
+            <Route
+              path="dashboard"
+              element={
+                isSignedIn ? (
+                  <DashboardPage />
+                ) : (
+                  <Navigate to="/auth/login" replace />
+                )
+              }
+            />
             <Route path="reviews" element={<ReviewsPage />} />
           </Route>
           <Route path="*" element={<h2>Shop page not found</h2>} />

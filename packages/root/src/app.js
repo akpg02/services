@@ -10,6 +10,7 @@ const AuthApp = lazy(() => import("auth/AuthApp"));
 
 export default function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
+  // Todo: implement user state via Redux
 
   return (
     <>
@@ -17,7 +18,7 @@ export default function App() {
       <Suspense fallback={<div>Loading root…</div>}>
         <Routes>
           <Route index element={<div>Root home</div>} />
-          <Route path="shop/*" element={<ShopApp />} />
+          <Route path="shop/*" element={<ShopApp isSignedIn={isSignedIn} />} />
           <Route path="portfolio/*" element={<PortfolioApp />} />
           <Route path="blog/*" element={<BlogApp />} />
           <Route
