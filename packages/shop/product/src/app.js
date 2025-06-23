@@ -7,7 +7,6 @@ export default function ProductPage() {
       <ul>
         <li>Product images, variants, descriptions, specs</li>
         <li>"Add to cart" and "Add to wishlist" buttons</li>
-        <li></li>
       </ul>
     </div>
   );

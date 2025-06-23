@@ -12,6 +12,16 @@ const ProductsPage = lazy(() => import("products/ProductsApp"));
 const CartPage = lazy(() => import("cart/CartApp"));
 const DashboardPage = lazy(() => import("dashboard/DashboardApp"));
 const ReviewsPage = lazy(() => import("reviews/ReviewsApp"));
+const ChatPage = lazy(() => import("chat/ChatApp"));
+const CheckoutPage = lazy(() => import("checkout/CheckoutApp"));
+const OrdersPage = lazy(() => import("orders/OrdersApp"));
+const ProductPage = lazy(() => import("product/ProductApp"));
+const PaymentsPage = lazy(() => import("payments/PaymentsApp"));
+const SearchPage = lazy(() => import("search/SearchApp"));
+const WishlistPage = lazy(() => import("wishlist/WishlistApp"));
+const RecommendationsPage = lazy(() =>
+  import("recommendations/RecommendationsApp")
+);
 
 function ShopLayout() {
   const prefix = window.location.pathname.startsWith("/shop") ? "/shop" : "";
@@ -23,6 +33,30 @@ function ShopLayout() {
         </Link>
         <Link to={`${prefix}/cart`} style={{ marginRight: 10 }}>
           Cart
+        </Link>
+        <Link to={`${prefix}/chat`} style={{ marginRight: 10 }}>
+          Chat
+        </Link>
+        <Link to={`${prefix}/checkout`} style={{ marginRight: 10 }}>
+          Checkout
+        </Link>
+        <Link to={`${prefix}/orders`} style={{ marginRight: 10 }}>
+          Orders
+        </Link>
+        <Link to={`${prefix}/payments`} style={{ marginRight: 10 }}>
+          Payments
+        </Link>
+        <Link to={`${prefix}/product`} style={{ marginRight: 10 }}>
+          Product
+        </Link>
+        <Link to={`${prefix}/recommendations`} style={{ marginRight: 10 }}>
+          Recommendations
+        </Link>
+        <Link to={`${prefix}/search`} style={{ marginRight: 10 }}>
+          Search
+        </Link>
+        <Link to={`${prefix}/wishlist`} style={{ marginRight: 10 }}>
+          Wishlist
         </Link>
         <Link to={`${prefix}/dashboard`} style={{ marginRight: 10 }}>
           Dashboard
@@ -65,6 +99,14 @@ export default function ShopPage({ isSignedIn }) {
               }
             />
             <Route path="reviews" element={<ReviewsPage />} />
+            <Route path="chat" element={<ChatPage />} />
+            <Route path="checkout" element={<CheckoutPage />} />
+            <Route path="orders" element={<OrdersPage />} />
+            <Route path="product" element={<ProductPage />} />
+            <Route path="payments" element={<PaymentsPage />} />
+            <Route path="recommendations" element={<RecommendationsPage />} />
+            <Route path="search" element={<SearchPage />} />
+            <Route path="wishlist" element={<WishlistPage />} />
           </Route>
           <Route path="*" element={<h2>Shop page not found</h2>} />
         </Routes>

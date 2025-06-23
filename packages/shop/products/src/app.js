@@ -4,7 +4,10 @@ export default function ProductsPage() {
   return (
     <div>
       <h2>Products</h2>
-      <p>List of products listed here..;akfoisjao.</p>
+      <ul>
+        <li>Category listings, facet listing (price, brand, rating)</li>
+        <li>Pagination or infinite scroll</li>
+      </ul>
     </div>
   );
 }

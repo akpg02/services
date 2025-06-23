@@ -8,6 +8,7 @@ export default function CartPage() {
         <li>Review items, change quantities, remove items</li>
         <li>Show subtotal, tax/discount estimates</li>
         <li>Persist cart between sessions</li>
+        <li></li>
       </ul>
     </div>
   );

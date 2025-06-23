@@ -7,7 +7,6 @@ export default function ReviewsPage() {
       <ul>
         <li>Display and submit product reviews</li>
         <li>Aggregate ratings on product pages</li>
-        <li></li>
       </ul>
     </div>
   );
