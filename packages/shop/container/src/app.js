@@ -68,6 +68,11 @@ function ShopLayout() {
   );
 }
 
+/*
+isSignedIn ? (
+ <DashboardPage />) : (
+<Navigate to="/auth/login" replace />) */
+
 export default function ShopPage({ isSignedIn }) {
   const navigate = useNavigate();
 
@@ -88,16 +93,7 @@ export default function ShopPage({ isSignedIn }) {
             />
             <Route path="products" element={<ProductsPage />} />
             <Route path="cart" element={<CartPage />} />
-            <Route
-              path="dashboard"
-              element={
-                isSignedIn ? (
-                  <DashboardPage />
-                ) : (
-                  <Navigate to="/auth/login" replace />
-                )
-              }
-            />
+            <Route path="dashboard" element={<DashboardPage />} />
             <Route path="reviews" element={<ReviewsPage />} />
             <Route path="chat" element={<ChatPage />} />
             <Route path="checkout" element={<CheckoutPage />} />

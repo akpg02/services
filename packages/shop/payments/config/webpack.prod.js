@@ -12,9 +12,9 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "payment",
+      name: "payments",
       filename: "remoteEntry.js",
-      exposes: { "./PaymentApp": "./src/app" },
+      exposes: { "./PaymentsApp": "./src/app" },
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },
