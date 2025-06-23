@@ -1,10 +1,13 @@
 import React from "react";
 
-export default function ProjectsPage() {
+export default function DashboardPage() {
   return (
     <div>
-      <h2>Dashboard</h2>
-      <p>User dashboard option appear here. soidfaisy</p>
+      <h2>User Account Info</h2>
+      <ul>
+        <li>Profile settings (address book, payment methods)</li>
+        <li>Email preferences, password change</li>
+      </ul>
     </div>
   );
 }

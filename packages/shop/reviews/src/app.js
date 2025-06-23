@@ -1,10 +1,13 @@
 import React from "react";
 
-export default function ProjectsPage() {
+export default function ReviewsPage() {
   return (
     <div>
-      <h2>Reviews</h2>
-      <p>Product reviews appear here...asldfjoshfo</p>
+      <h2>Reviews & Ratings</h2>
+      <ul>
+        <li>Display and submit product reviews</li>
+        <li>Aggregate ratings on product pages</li>
+      </ul>
     </div>
   );
 }
