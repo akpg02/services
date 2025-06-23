@@ -7,7 +7,6 @@ export default function DashboardPage() {
       <ul>
         <li>Profile settings (address book, payment methods)</li>
         <li>Email preferences, password change</li>
-        <li></li>
       </ul>
     </div>
   );
