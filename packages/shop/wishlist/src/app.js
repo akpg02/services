@@ -7,6 +7,7 @@ export default function WishlistPage() {
       <ul>
         <li>User-managed list of saved products</li>
         <li>"Move to cart" or "Share wishlist" actions</li>
+        <li></li>
       </ul>
     </div>
   );

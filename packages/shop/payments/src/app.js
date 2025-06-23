@@ -7,6 +7,7 @@ export default function PaymentsPage() {
       <ul>
         <li>Secured payments fields (credit card, ApplePay, PayPal, etc.)</li>
         <li>Tokenization and PCI-compliance wrappers</li>
+        <li></li>
       </ul>
     </div>
   );

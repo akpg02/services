@@ -11,6 +11,7 @@ export default function CheckoutPage() {
         </li>
         <li>Integrate with your Payment MFE or third-party gateway</li>
         <li>Order confirmation page</li>
+        <li></li>
       </ul>
     </div>
   );

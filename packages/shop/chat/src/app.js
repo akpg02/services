@@ -7,6 +7,7 @@ export default function ChatPage() {
       <ul>
         <li>Live-chat widget or ticket submission form</li>
         <li>Links to FAQs, return policies</li>
+        <li></li>
       </ul>
     </div>
   );

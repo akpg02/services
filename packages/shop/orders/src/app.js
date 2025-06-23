@@ -7,6 +7,7 @@ export default function OrdersPage() {
       <ul>
         <li>List of past orders, statuses, invoices</li>
         <li>'Reorder' action</li>
+        <li></li>
       </ul>
     </div>
   );

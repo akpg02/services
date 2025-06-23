@@ -7,6 +7,7 @@ export default function RecommendationPage() {
       <ul>
         <li>"Customers also bought/viewed" carousels</li>
         <li>Personalized "For you" sections</li>
+        <li></li>
       </ul>
     </div>
   );
