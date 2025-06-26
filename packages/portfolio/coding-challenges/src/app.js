@@ -8,6 +8,7 @@ export default function ChallengesPage() {
         Note: Build a UI for each coding challenge. Solve and code each
         challenge. For example: palindrome, fizzbuzz, etc.
       </p>
+      <li></li>
     </div>
   );
 }

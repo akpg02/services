@@ -5,6 +5,7 @@ export default function AboutPage() {
     <div>
       <h2>About Me</h2>
       <p>My bio goes here. jaosijfolanl</p>
+      <li></li>
     </div>
   );
 }
