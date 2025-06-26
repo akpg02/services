@@ -14,9 +14,9 @@ const devConfig = {
   output: { publicPath: "auto" },
   plugins: [
     new ModuleFederationPlugin({
-      name: "author",
+      name: "notifications",
       filename: "remoteEntry.js",
-      exposes: { "./AuthorApp": "./src/app" },
+      exposes: { "./NotificationsApp": "./src/app" },
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },

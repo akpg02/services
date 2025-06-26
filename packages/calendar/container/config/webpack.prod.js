@@ -30,7 +30,7 @@ const prodConfig = {
         notifications: `notifications@${domain}/calendar/notifications/latest/remoteEntry.js`,
         recurrence_rules: `recurrence_rules@${domain}/calendar/recurrence_rules/latest/remoteEntry.js`,
         search: `search@${domain}/calendar/search/latest/remoteEntry.js`,
-        settings_profile: `settings_profile@${domain}/calendar/settings_profile/latest/remoteEntry.js`,
+        settings: `settings@${domain}/calendar/settings/latest/remoteEntry.js`,
         views: `views@${domain}/calendar/views/latest/remoteEntry.js`,
       },
       shared: {

@@ -37,8 +37,22 @@
     "start:shop-reviews": "npm --workspace=packages/shop/reviews run start",
     "start:shop-search": "npm --workspace=packages/shop/search run start",
     "start:shop-wishlist": "npm --workspace=packages/shop/wishlist run start",
+    "start:calendar-admin": "npm --workspace=packages/calendar/admin run start",
+    "start:calendar-analytics": "npm --workspace=packages/calendar/analytics run start",
+    "start:calendar-availability": "npm --workspace=packages/calendar/availability run start",
+    "start:calendar-collaboration": "npm --workspace=packages/calendar/collaboration run start",
+    "start:calendar-container": "npm --workspace=packages/calendar/container run start",
+    "start:calendar-event-creation": "npm --workspace=packages/calendar/event-creation run start",
+    "start:calendar-event-details": "npm --workspace=packages/calendar/event-details run start",
+    "start:calendar-event-list": "npm --workspace=packages/calendar/event-list run start",
+    "start:calendar-integrations": "npm --workspace=packages/calendar/integrations run start",
+    "start:calendar-notifications": "npm --workspace=packages/calendar/notifications run start",
+    "start:calendar-recurrence-rules": "npm --workspace=packages/calendar/recurrence-rules run start",
+    "start:calendar-search": "npm --workspace=packages/calendar/search run start",
+    "start:calendar-settings-profile": "npm --workspace=packages/calendar/settings-profile run start",
+    "start:calendar-views": "npm --workspace=packages/calendar/views run start",
     "start:root": "npm --workspace=packages/root run start",
-    "start": "npm-run-all --parallel \"start:auth\" \"start:blog-*\" \"start:portfolio-*\" \"start:shop-*\" \"start:root\""
+    "start": "npm-run-all --parallel \"start:auth\" \"start:blog-*\" \"start:portfolio-*\"  \"start:shop-*\" \"start:calendar-*\" \"start:root\""
   },
   "devDependencies": {
     "concurrently": "^9.1.2",

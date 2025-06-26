@@ -5,14 +5,23 @@ const Admin = lazy(() => import("admin/AdminApp"));
 const Analytics = lazy(() => import("analytics/AnalyticsApp"));
 const Availability = lazy(() => import("availability/AvailabilityApp"));
 const Collaboration = lazy(() => import("collaboration/CollaborationApp"));
-const EventCreation = lazy(() => import("post/EventCreationApp"));
-const Posts = lazy(() => import("posts/PostsApp"));
-const Related = lazy(() => import("related/RelatedApp"));
+const EventCreation = lazy(() => import("event_creation/EventCreationApp"));
+const EventDetails = lazy(() => import("event_details/EventDetailsApp"));
+const EventList = lazy(() => import("event_list/EventListApp"));
+const Integrations = lazy(() => import("integrations/IntegrationsApp"));
+const Invitations = lazy(() => import("invitations/InvitationsApp"));
 const Search = lazy(() => import("search/SearchApp"));
-const Social = lazy(() => import("social/SocialApp"));
+const Settings = lazy(() => import("settings/SettingsApp"));
+const Views = lazy(() => import("views/ViewsApp"));
+const Notifications = lazy(() => import("notifications/NotificationsApp"));
+const RecurrenceRules = lazy(() =>
+  import("recurrence_rules/NoRecurrenceRulesApp")
+);
 
 function CalendarLayout() {
-  const prefix = window.location.pathname.startsWith("/blog") ? "/blog" : "";
+  const prefix = window.location.pathname.startsWith("/calendar")
+    ? "/calendar"
+    : "";
   return (
     <>
       <nav style={{ padding: 10, borderBottom: "1px solid #ccc" }}>
@@ -22,22 +31,42 @@ function CalendarLayout() {
         <Link to={`${prefix}/analytics`} style={{ marginRight: 10 }}>
           Analytics
         </Link>
-        <Link to={`${prefix}/post`} style={{ marginRight: 10 }}>
-          Post
+        <Link to={`${prefix}/availability`} style={{ marginRight: 10 }}>
+          Availability
         </Link>
-        <Link to={`${prefix}/posts`} style={{ marginRight: 10 }}>
-          Posts
+        <Link to={`${prefix}/collaboration`} style={{ marginRight: 10 }}>
+          Collaboration
         </Link>
-        <Link to={`${prefix}/related`} style={{ marginRight: 10 }}>
-          Related
+        <Link to={`${prefix}/event-creation`} style={{ marginRight: 10 }}>
+          Event Creation
+        </Link>
+        <Link to={`${prefix}/event-details`} style={{ marginRight: 10 }}>
+          Event Details
+        </Link>
+        <Link to={`${prefix}/event-list`} style={{ marginRight: 10 }}>
+          Event List
+        </Link>
+        <Link to={`${prefix}/integrations`} style={{ marginRight: 10 }}>
+          Integrations
+        </Link>
+        <Link to={`${prefix}/invitations`} style={{ marginRight: 10 }}>
+          Invitationss
+        </Link>
+        <Link to={`${prefix}/notifications`} style={{ marginRight: 10 }}>
+          Notifications
+        </Link>
+        <Link to={`${prefix}/recurrence-rules`} style={{ marginRight: 10 }}>
+          Integrations
         </Link>
         <Link to={`${prefix}/search`} style={{ marginRight: 10 }}>
           Search
         </Link>
-        <Link to={`${prefix}/social`} style={{ marginRight: 10 }}>
-          Social
+        <Link to={`${prefix}/settings`} style={{ marginRight: 10 }}>
+          Settings
         </Link>
-        <Link to={`${prefix}/newsletters`}>Newsletters</Link>
+        <Link to={`${prefix}/views`} style={{ marginRight: 10 }}>
+          Views
+        </Link>
       </nav>
       <Outlet />
     </>
@@ -53,12 +82,17 @@ export default function App() {
             <Route path="author" element={<Admin />} />
             <Route path="categories" element={<Analytics />} />
             <Route path="comments" element={<Availability />} />
-            <Route path="newsletters" element={<Collaboration />} />
-            <Route path="post" element={<EventCreation />} />
-            <Route path="posts" element={<Posts />} />
-            <Route path="related" element={<Related />} />
+            <Route path="collaborations" element={<Collaboration />} />
+            <Route path="event-creation" element={<EventCreation />} />
+            <Route path="event-details" element={<EventDetails />} />
+            <Route path="event-list" element={<EventList />} />
+            <Route path="integrations" element={<Integrations />} />
+            <Route path="invitations" element={<Invitations />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="recurrence-rules" element={<RecurrenceRules />} />
             <Route path="search" element={<Search />} />
-            <Route path="social" element={<Social />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="views" element={<Views />} />
           </Route>
           <Route path="*" element={<h2>Blog page not found</h2>} />
         </Routes>
