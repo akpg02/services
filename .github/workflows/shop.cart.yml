@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - "packages/shop/cart/**"
+  workflow_dispatch:
 
 defaults:
   run:
@@ -13,14 +14,56 @@ defaults:
 
 jobs:
   build:
+    name: Build Contact Package
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - run: npm install
-      - run: npm run build
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
         env:
-          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN  }}
+          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
+
+  deploy:
+    name: Deploy to AWS (manual only)
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies & build
+        run: |
+          npm install
+          npm run build
+        env:
+          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
+
+      - name: Configure AWS CLI
+        uses: shinyinc/action-aws-cli@v1.2
+
+      - name: Sync to S3
+        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/shop/cart/latest
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-west-2
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} \
+            --paths "/shop/cart/latest/remoteEntry.js"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-west-2
+
 
       # - uses: shinyinc/action-aws-cli@v1.2
       # - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/shop/cart/latest
