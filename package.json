@@ -4,6 +4,7 @@
     "packages/blog/*",
     "packages/portfolio/*",
     "packages/shop/*",
+    "packages/calendar/*",
     "packages/root",
     "packages/auth"
   ],
@@ -46,6 +47,7 @@
     "start:calendar-event-details": "npm --workspace=packages/calendar/event-details run start",
     "start:calendar-event-list": "npm --workspace=packages/calendar/event-list run start",
     "start:calendar-integrations": "npm --workspace=packages/calendar/integrations run start",
+    "start:calendar-invitations": "npm --workspace=packages/calendar/invitations run start",
     "start:calendar-notifications": "npm --workspace=packages/calendar/notifications run start",
     "start:calendar-recurrence-rules": "npm --workspace=packages/calendar/recurrence-rules run start",
     "start:calendar-search": "npm --workspace=packages/calendar/search run start",

@@ -34,8 +34,8 @@ const devConfig = {
         recurrence_rules:
           "recurrence_rules@http://localhost:3042/remoteEntry.js",
         search: "search@http://localhost:3043/remoteEntry.js",
-        settings: "settings_profile@http://localhost:3044/remoteEntry.js",
-        views: "views@http://localhost:3019/remoteEntry.js",
+        settings: "settings@http://localhost:3044/remoteEntry.js",
+        views: "views@http://localhost:3035/remoteEntry.js",
       },
       shared: {
         react: { singleton: true, eager: true },

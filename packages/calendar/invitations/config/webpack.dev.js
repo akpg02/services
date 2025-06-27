@@ -6,7 +6,7 @@ const devConfig = {
   mode: "development",
   entry: "./src/index.js",
   devServer: {
-    port: 3011,
+    port: 3040,
     hot: true,
     headers: { "Access-Control-Allow-Origin": "*" },
     historyApiFallback: true,
@@ -14,9 +14,9 @@ const devConfig = {
   output: { publicPath: "auto" },
   plugins: [
     new ModuleFederationPlugin({
-      name: "author",
+      name: "invitations",
       filename: "remoteEntry.js",
-      exposes: { "./AuthorApp": "./src/app" },
+      exposes: { "./InvitationsApp": "./src/app" },
       shared: {
         react: { singleton: true, eager: true },
         "react-dom": { singleton: true, eager: true },

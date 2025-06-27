@@ -38,9 +38,18 @@ export default function Header({ isSignedIn, onSignOut }) {
             to="/blog"
             className="text-lg font-bold text-slate-600  hover:text-blue-700 transition"
             replace
+            style={{ marginRight: 10 }}
             reloadDocument
           >
             Blog
+          </Link>
+          <Link
+            to="/calendar"
+            className="text-lg font-bold text-slate-600  hover:text-blue-700 transition"
+            replace
+            reloadDocument
+          >
+            Calendar
           </Link>
         </div>
         <div>

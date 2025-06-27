@@ -6,6 +6,7 @@ import Header from "./components/header";
 const ShopApp = lazy(() => import("shop/ShopApp"));
 const PortfolioApp = lazy(() => import("portfolio/PortfolioApp"));
 const BlogApp = lazy(() => import("blog/BlogApp"));
+const CalendarApp = lazy(() => import("calendar/CalendarApp"));
 const AuthApp = lazy(() => import("auth/AuthApp"));
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="shop/*" element={<ShopApp isSignedIn={isSignedIn} />} />
           <Route path="portfolio/*" element={<PortfolioApp />} />
           <Route path="blog/*" element={<BlogApp />} />
+          <Route path="calendar/*" element={<CalendarApp />} />
           <Route
             path="auth/*"
             element={

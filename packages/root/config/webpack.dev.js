@@ -31,6 +31,7 @@ const devConfig = {
         portfolio: "portfolio@http://localhost:3005/remoteEntry.js",
         shop: "shop@http://localhost:3000/remoteEntry.js",
         blog: "blog@http://localhost:3010/remoteEntry.js",
+        calendar: "calendar@http://localhost:3030/remoteEntry.js",
         auth: "auth@http://localhost:3020/remoteEntry.js",
       },
       shared: {

@@ -8,14 +8,14 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: `${domain}/blog/author/latest/`,
+    publicPath: `${domain}/calendar/event-details/latest/`,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "author",
+      name: "event_details",
       filename: "remoteEntry.js",
       exposes: {
-        "./AuthorApp": "./src/app",
+        "./EventDetailsApp": "./src/app",
       },
       shared: {
         react: { singleton: true, eager: true },

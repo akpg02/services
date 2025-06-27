@@ -12,10 +12,10 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "author",
+      name: "views",
       filename: "remoteEntry.js",
       exposes: {
-        "./AuthorApp": "./src/app",
+        "./ViewsApp": "./src/app",
       },
       shared: {
         react: { singleton: true, eager: true },

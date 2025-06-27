@@ -15,7 +15,7 @@ const Settings = lazy(() => import("settings/SettingsApp"));
 const Views = lazy(() => import("views/ViewsApp"));
 const Notifications = lazy(() => import("notifications/NotificationsApp"));
 const RecurrenceRules = lazy(() =>
-  import("recurrence_rules/NoRecurrenceRulesApp")
+  import("recurrence_rules/RecurrenceRulesApp")
 );
 
 function CalendarLayout() {
@@ -34,8 +34,8 @@ function CalendarLayout() {
         <Link to={`${prefix}/availability`} style={{ marginRight: 10 }}>
           Availability
         </Link>
-        <Link to={`${prefix}/collaboration`} style={{ marginRight: 10 }}>
-          Collaboration
+        <Link to={`${prefix}/collaborations`} style={{ marginRight: 10 }}>
+          Collaborations
         </Link>
         <Link to={`${prefix}/event-creation`} style={{ marginRight: 10 }}>
           Event Creation
@@ -50,13 +50,13 @@ function CalendarLayout() {
           Integrations
         </Link>
         <Link to={`${prefix}/invitations`} style={{ marginRight: 10 }}>
-          Invitationss
+          Invitations
         </Link>
         <Link to={`${prefix}/notifications`} style={{ marginRight: 10 }}>
           Notifications
         </Link>
         <Link to={`${prefix}/recurrence-rules`} style={{ marginRight: 10 }}>
-          Integrations
+          Recurrence Rules
         </Link>
         <Link to={`${prefix}/search`} style={{ marginRight: 10 }}>
           Search
@@ -78,10 +78,10 @@ export default function App() {
       <Suspense fallback={<div>Loading Blog…</div>}>
         <Routes>
           <Route path="" element={<CalendarLayout />}>
-            <Route index element={<div>Blog landing page</div>} />
-            <Route path="author" element={<Admin />} />
-            <Route path="categories" element={<Analytics />} />
-            <Route path="comments" element={<Availability />} />
+            <Route index element={<div>Calendar landing page</div>} />
+            <Route path="admin" element={<Admin />} />
+            <Route path="analytics" element={<Analytics />} />
+            <Route path="availability" element={<Availability />} />
             <Route path="collaborations" element={<Collaboration />} />
             <Route path="event-creation" element={<EventCreation />} />
             <Route path="event-details" element={<EventDetails />} />
@@ -94,7 +94,7 @@ export default function App() {
             <Route path="settings" element={<Settings />} />
             <Route path="views" element={<Views />} />
           </Route>
-          <Route path="*" element={<h2>Blog page not found</h2>} />
+          <Route path="*" element={<h2>Calendar page not found</h2>} />
         </Routes>
       </Suspense>
     </>
