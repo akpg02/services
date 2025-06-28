@@ -5,7 +5,6 @@ export default function AboutPage() {
     <div>
       <h2>Integrations</h2>
       <p> Integrations biography goes here.</p>
-      <p></p>
     </div>
   );
 }

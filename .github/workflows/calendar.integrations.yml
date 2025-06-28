@@ -1,16 +1,16 @@
-name: deploy-integration
+name: deploy-integrations
 
 on:
   push:
     branches:
       - master
     paths:
-      - "packages/calendar/integration/**"
+      - "packages/calendar/integrations/**"
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: packages/calendar/integration
+    working-directory: packages/calendar/integrations
 
 jobs:
   build:
@@ -48,7 +48,7 @@ jobs:
         uses: shinyinc/action-aws-cli@v1.2
 
       - name: Sync to S3
-        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/calendar/integration/latest
+        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/calendar/integrations/latest
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -58,7 +58,7 @@ jobs:
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} \
-            --paths "/calendar/integration/latest/remoteEntry.js"
+            --paths "/calendar/integrations/latest/remoteEntry.js"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
