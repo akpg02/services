@@ -1,4 +1,4 @@
-name: deploy-recurrence-rules
+name: deploy-recurrence_rules
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: deploy-event-details
+name: deploy-event_details
 
 on:
   push:

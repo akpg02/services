@@ -1,4 +1,4 @@
-name: deploy-event-creation
+name: deploy-event_creation
 
 on:
   push:
