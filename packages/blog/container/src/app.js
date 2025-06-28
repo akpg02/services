@@ -60,7 +60,7 @@ export default function App() {
             <Route path="search" element={<Search />} />
             <Route path="social" element={<Social />} />
           </Route>
-          <Route path="*" element={<h2>404: Page Not Found</h2>} />
+          <Route path="*" element={<h2>404: Page Not Found!</h2>} />
         </Routes>
       </Suspense>
     </>
