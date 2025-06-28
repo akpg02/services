@@ -94,7 +94,7 @@ export default function App() {
             <Route path="settings" element={<Settings />} />
             <Route path="views" element={<Views />} />
           </Route>
-          <Route path="*" element={<h2>Page not found</h2>} />
+          <Route path="*" element={<h2>404: Page Not Found</h2>} />
         </Routes>
       </Suspense>
     </>
