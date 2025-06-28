@@ -12,7 +12,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "event-list",
+      name: "event_list",
       filename: "remoteEntry.js",
       exposes: {
         "./EventListApp": "./src/app",
