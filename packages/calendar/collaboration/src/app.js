@@ -5,6 +5,7 @@ export default function AboutPage() {
     <div>
       <h2>Collaborations Details</h2>
       <p> Collaborations biography goes here.</p>
+      <li></li>
     </div>
   );
 }

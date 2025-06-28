@@ -4,6 +4,7 @@ export default function AboutPage() {
   return (
     <div>
       <h2>Calendar Profile & Settings</h2>
+      <p></p>
     </div>
   );
 }

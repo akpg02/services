@@ -8,7 +8,6 @@ export default function AboutPage() {
         <li>User and domain management</li>
         <li>Audit logs of creations/edits/deletions</li>
         <li>role-based access controls</li>
-        <li></li>
       </ul>
     </div>
   );

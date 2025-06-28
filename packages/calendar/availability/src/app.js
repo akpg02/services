@@ -7,6 +7,7 @@ export default function AboutPage() {
       <ul>
         <li>Display free/busy blocks for you and teammates</li>
         <li>"find a time" slot wizard</li>
+        <li></li>
       </ul>
     </div>
   );

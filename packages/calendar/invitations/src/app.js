@@ -5,6 +5,7 @@ export default function AboutPage() {
     <div>
       <h2>Invitations</h2>
       <p> Invitatoins biography goes here.</p>
+      <p></p>
     </div>
   );
 }

@@ -8,6 +8,7 @@ export default function AboutPage() {
         <li>Event counts by type/week/month</li>
         <li>Busy-time heatmaps</li>
         <li>exportable PDF/CSV reports</li>
+        <li></li>
       </ul>
     </div>
   );
