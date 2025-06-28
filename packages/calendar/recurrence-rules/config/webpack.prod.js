@@ -8,7 +8,7 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: `${domain}/calendar/recurrence-rules/latest/`,
+    publicPath: `${domain}/calendar/recurrence_rules/latest/`,
   },
   plugins: [
     new ModuleFederationPlugin({
