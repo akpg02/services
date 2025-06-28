@@ -12,7 +12,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "notificatoionr",
+      name: "notifications",
       filename: "remoteEntry.js",
       exposes: {
         "./NotificationsApp": "./src/app",
