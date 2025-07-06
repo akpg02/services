@@ -1,20 +1,19 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../index.css";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import '../index.css';
 // import Header from '../components/Header';
 
 export default function SignInPage({ onSignIn }) {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: integrate authentication logic
-    console.log({ email, password });
-    navigate("/");
+    navigate('/');
   };
-  const prefix = window.location.pathname.startsWith("/auth") ? "/auth" : "";
+  const prefix = window.location.pathname.startsWith('/auth') ? '/auth' : '';
   return (
     <>
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
@@ -59,7 +58,7 @@ export default function SignInPage({ onSignIn }) {
           </button>
 
           <p className="mt-4 text-center text-gray-600">
-            Don’t have an account?{" "}
+            Don’t have an account?{' '}
             <Link
               to={`${prefix}/register`}
               className="text-blue-600 hover:underline"

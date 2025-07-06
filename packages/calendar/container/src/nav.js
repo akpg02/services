@@ -1,0 +1,17 @@
+export default [
+  { path: '/calendar', label: 'Home' },
+  { path: '/calendar/admin', label: 'Admin' },
+  { path: '/calendar/analytics', label: 'Analytics' },
+  { path: '/calendar/availability', label: 'Availability' },
+  { path: '/calendar/collaborations', label: 'Collaborations' },
+  { path: '/calendar/event-details', label: 'Event-Details' },
+  { path: '/calendar/event-creation', label: 'Event-Creation' },
+  { path: '/calendar/event-list', label: 'Event-List' },
+  { path: '/calendar/integrations', label: 'Integrations' },
+  { path: '/calendar/invitations', label: 'Invitations' },
+  { path: '/calendar/notifications', label: 'Notifications' },
+  { path: '/calendar/recurrence-rules', label: 'Recurrence-Rules' },
+  { path: '/calendar/search', label: 'Search' },
+  { path: '/calendar/settings', label: 'Settings' },
+  { path: '/calendar/views', label: 'Views' },
+];

@@ -1,21 +1,20 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../index.css";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import '../index.css';
 
 export default function SignUpPage({ onSignIn }) {
   const navigate = useNavigate();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: integrate signup logic
-    console.log({ name, email, password });
-    navigate("/login");
+    navigate('/login');
   };
 
-  const prefix = window.location.pathname.startsWith("/auth") ? "/auth" : "";
+  const prefix = window.location.pathname.startsWith('/auth') ? '/auth' : '';
   return (
     <>
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
@@ -72,7 +71,7 @@ export default function SignUpPage({ onSignIn }) {
           </button>
 
           <p className="mt-4 text-center text-gray-600">
-            Already have an account?{" "}
+            Already have an account?{' '}
             <Link
               to={`${prefix}/login`}
               className="text-green-600 hover:underline"

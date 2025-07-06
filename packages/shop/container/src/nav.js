@@ -1,0 +1,15 @@
+export default [
+  { path: '/shop', label: 'Home' },
+  { path: '/shop/products', label: 'Products' },
+  { path: '/shop/cart', label: 'Cart' },
+  { path: '/shop/chat', label: 'Chat' },
+  { path: '/shop/checkout', label: 'Checkout' },
+  { path: '/shop/orders', label: 'Orders' },
+  { path: '/shop/payments', label: 'Payments' },
+  { path: '/shop/product', label: 'Product' },
+  { path: '/shop/recommendations', label: 'Recommendations' },
+  { path: '/shop/search', label: 'Search' },
+  { path: '/shop/wishlist', label: 'Wishlist' },
+  { path: '/shop/dashboard', label: 'Dashboard' },
+  { path: '/shop/reviews', label: 'Reviews' },
+];

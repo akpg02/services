@@ -1,21 +1,22 @@
-const { merge } = require("webpack-merge");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const commonConfig = require("./webpack.common");
+const { merge } = require('webpack-merge');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const commonConfig = require('./webpack.common');
 
 const domain = process.env.PRODUCTION_DOMAIN;
 
 const prodConfig = {
-  mode: "production",
+  mode: 'production',
   output: {
-    filename: "[name].[contenthash].js",
+    filename: '[name].[contenthash].js',
     publicPath: `${domain}/blog/container/latest/`,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "blog",
-      filename: "remoteEntry.js",
+      name: 'blog',
+      filename: 'remoteEntry.js',
       exposes: {
-        "./BlogApp": "./src/app",
+        './BlogApp': './src/app',
+        './nav': './src/nav',
       },
       remotes: {
         author: `author@${domain}/blog/author/latest/remoteEntry.js`,
@@ -30,9 +31,9 @@ const prodConfig = {
       },
       shared: {
         react: { singleton: true, eager: true },
-        "react-dom": { singleton: true, eager: true },
-        "react-router-dom": { singleton: true, eager: true },
-        "react-router": { singleton: true, eager: true },
+        'react-dom': { singleton: true, eager: true },
+        'react-router-dom': { singleton: true, eager: true },
+        'react-router': { singleton: true, eager: true },
       },
     }),
   ],

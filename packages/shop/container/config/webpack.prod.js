@@ -1,20 +1,20 @@
-const { merge } = require("webpack-merge");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const commonConfig = require("./webpack.common");
+const { merge } = require('webpack-merge');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const commonConfig = require('./webpack.common');
 
 const domain = process.env.PRODUCTION_DOMAIN;
 
 const prodConfig = {
-  mode: "production",
+  mode: 'production',
   output: {
-    filename: "[name].[contenthash].js",
+    filename: '[name].[contenthash].js',
     publicPath: `${domain}/shop/container/latest/`,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "shop",
-      filename: "remoteEntry.js",
-      exposes: { "./ShopApp": "./src/app" },
+      name: 'shop',
+      filename: 'remoteEntry.js',
+      exposes: { './ShopApp': './src/app', './nav': './src/nav' },
       remotes: {
         products: `products@${domain}/shop/products/latest/remoteEntry.js`,
         cart: `cart@${domain}/shop/cart/latest/remoteEntry.js`,
@@ -31,9 +31,9 @@ const prodConfig = {
       },
       shared: {
         react: { singleton: true, eager: true },
-        "react-dom": { singleton: true, eager: true },
-        "react-router-dom": { singleton: true, eager: true },
-        "react-router": { singleton: true, eager: true },
+        'react-dom': { singleton: true, eager: true },
+        'react-router-dom': { singleton: true, eager: true },
+        'react-router': { singleton: true, eager: true },
       },
     }),
   ],
