@@ -26,14 +26,20 @@ export default function App() {
               <Layout isSignedIn={isSignedIn} onSignOut={handleLogout} />
             }
           >
-            <Route index element={<div>Root home</div>} />
+            <Route index element={<PortfolioApp />} />
             <Route
               path="shop/*"
               element={<ShopApp isSignedIn={isSignedIn} />}
             />
             <Route path="portfolio/*" element={<PortfolioApp />} />
-            <Route path="blog/*" element={<BlogApp />} />
-            <Route path="calendar/*" element={<CalendarApp />} />
+            <Route
+              path="blog/*"
+              element={<BlogApp isSignedIn={isSignedIn} />}
+            />
+            <Route
+              path="calendar/*"
+              element={<CalendarApp isSignedIn={isSignedIn} />}
+            />
             <Route
               path="auth/*"
               element={
