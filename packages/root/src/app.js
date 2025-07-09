@@ -1,6 +1,6 @@
 // root/container/src/App.jsx
 import React, { Suspense, lazy, useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout';
 
 const ShopApp = lazy(() => import('shop/ShopApp'));

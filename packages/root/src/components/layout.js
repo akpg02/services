@@ -1,16 +1,25 @@
+// src/components/Layout.jsx
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './header';
-import Sidebar from './sidebar';
+import Header from './Header';
+import Sidebar from './Sidebar';
 
 export default function Layout({ isSignedIn, onSignOut }) {
   return (
-    <div className="flex h-screen">
+    <div className="app-container">
       <Sidebar isSignedIn={isSignedIn} onSignOut={onSignOut} />
-      <div className="flex-1 flex flex-col">
-        <Header />
-        <main className="flex-1 overflow-auto p-4">
-          <Suspense fallback={<div>Loading...</div>}>
+
+      <div className="content-container">
+        <Header
+          isSignedIn={isSignedIn}
+          onSignOut={onSignOut}
+          className="page-header"
+        />
+
+        <main className="main-content">
+          <Suspense
+            fallback={<div className="loading-fallback">Loading...</div>}
+          >
             <Outlet />
           </Suspense>
         </main>

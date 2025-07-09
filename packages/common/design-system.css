@@ -1,0 +1,231 @@
+/* design-system.css */
+
+/* 1) Custom properties for theming */
+:root {
+  /* Dimensions */
+  --sidebar-width: 16rem;
+
+  /* Colors */
+  --color-sidebar-bg: #f3f4f6; /* gray-100 */
+  --color-sidebar-border: #e5e7eb; /* gray-200 */
+  --color-text: #374151; /* gray-700 */
+  --color-text-muted: #6b7280; /* gray-500 */
+  --color-text-hover: #2563eb; /* blue-600 */
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 4rem;
+}
+
+/* 1) Root application container */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* 2) Main content wrapper (next to sidebar) */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* 3) Page header */
+.page-header {
+  flex-shrink: 0;
+  padding: 1rem; /* Tailwind p-4 */
+  border-bottom: 1px solid #e5e7eb; /* Tailwind border-gray-200 */
+}
+
+/* 4) Main scrollable area */
+.main-content {
+  flex: 1;
+  overflow: auto;
+  padding: 1rem; /* Tailwind p-4 */
+  background: #f9fafb; /* optional light background */
+}
+
+/* 5) Loading fallback styling */
+.loading-fallback {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280; /* Tailwind gray-500 */
+}
+
+/* 1) Header container */
+.site-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+/* 2) Shared link/button styles */
+.header-link,
+.header-button {
+  font-size: 0.875rem; /* Tailwind text-sm */
+  font-weight: 500; /* Tailwind font-medium */
+  color: #374151; /* Tailwind text-gray-700 */
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* remove default padding */
+  padding-right: var(--space-xxl);
+}
+
+/* 3) Hover state */
+.header-link:hover,
+.header-button:hover {
+  color: #2563eb; /* Tailwind hover:text-blue-600 */
+}
+
+/* 4) Focus state for button */
+.header-button:focus {
+  outline: none; /* Tailwind focus:outline-none */
+}
+
+/* 1) Container spacing */
+.collapsible {
+  margin-top: var(--space-sm); /* 0.5rem */
+}
+
+/* 2) Toggle button */
+.collapsible-toggle {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: var(--space-xs); /* 0.25rem */
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+/* 3) Label spacing */
+.collapsible-toggle .toggle-label {
+  margin-right: var(--space-sm); /* 0.5rem */
+}
+
+/* 4) Icon sizing */
+.collapsible-toggle svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* 5) Collapsed content */
+.collapsible-content {
+  padding-left: var(--space-md); /* 1rem */
+  margin-top: var(--space-xs); /* 0.25rem */
+}
+
+/* 2) Sidebar container */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-sidebar-border);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3) Logo section */
+.sidebar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md);
+  text-align: center;
+}
+.sidebar-logo img {
+  height: 5rem;
+  width: auto;
+  margin: 0 auto;
+}
+.sidebar-logo p {
+  margin-top: var(--space-sm);
+}
+.sidebar-logo p:first-child {
+  color: var(--color-text);
+  font-size: 1rem;
+}
+.sidebar-logo p:last-child {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* 4) Navigation area */
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 5) Navigation groups */
+.nav-group {
+  margin-bottom: var(--space-lg);
+}
+.nav-group-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-muted);
+}
+
+/* 6) Links and buttons in nav */
+.sidebar-nav a,
+.sidebar-nav button {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-text);
+  text-decoration: none;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: var(--space-xs) 0;
+  cursor: pointer;
+}
+.sidebar-nav a:hover,
+.sidebar-nav button:hover {
+  color: var(--color-text-hover);
+}
+
+/* 7) Collapsible toggle styling */
+.collapsible-toggle {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: var(--space-xs) 0;
+}
+.collapsible-toggle svg {
+  margin-left: var(--space-xs);
+}
+
+/* 8) Utility margin helpers */
+.mt-1 {
+  margin-top: var(--space-xs);
+}
+.mt-2 {
+  margin-top: var(--space-sm);
+}
+.mb-1 {
+  margin-bottom: var(--space-xs);
+}
+.mb-2 {
+  margin-bottom: var(--space-sm);
+}
+
+/* 9) Responsive override */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+}

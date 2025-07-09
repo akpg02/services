@@ -65,61 +65,50 @@ export default function Sidebar({ isSignedIn, onSignOut }) {
   const more = others.slice(FEATURED_COUNT);
 
   return (
-    <aside className="w-64 flex flex-col bg-gray-100 border-r border-r-gray-200">
-      <Link to="/" className="p-4 flex justify-center">
-        <div className="text-center p-4">
-          <img src={logo} alt="Logo" className="mx-auto h-18 w-auto" />
-          <p className="text-md text-gray-700 mt-2">Grace Akpan</p>
-          <p className="text-xs text-gray-600">Web Developer</p>
-        </div>
-      </Link>
-      <nav className="flex-1 px-15 py-4 overflow-y-auto flex flex-col">
-        <div className="flex flex-col space-y-2 mb-4">
+    <aside className="sidebar">
+      <div className="sidebar-logo">
+        <img src={logo} alt="Logo" />
+        <p>Grace Akpan</p>
+        <p>Web Developer</p>
+      </div>
+
+      <nav className="sidebar-nav">
+        <div className="nav-group">
+          <div className="nav-group-title">Navigation</div>
           {navItems.map(({ path, label, onClick }) =>
             onClick ? (
               <button
                 key={path}
                 onClick={onClick}
-                className="w-full text-left text-sm font-medium text-gray-700 hover:text-blue-600 focus:outline-none"
+                className="collapsible-toggle"
               >
                 {label}
               </button>
             ) : (
-              <Link
-                key={path}
-                to={path}
-                className="block text-sm font-medium text-gray-700 hover:text-blue-600"
-              >
+              <Link key={path} to={path} className="collapsible-toggle">
                 {label}
               </Link>
             )
           )}
         </div>
-        <h4 className="text-xs font-semibold uppercase mb-2">Other Apps</h4>
-        <div className="space-y-2 mb-2">
+
+        <div className="nav-group">
+          <div className="nav-group-title">Other Apps</div>
           {featured.map((a) => (
-            <Link
-              key={a.path}
-              to={a.path}
-              className="block text-sm text-gray-700 hover:text-blue-600"
-            >
+            <Link key={a.path} to={a.path}>
               {a.label}
             </Link>
           ))}
+          {more.length > 0 && (
+            <Collapsible label={`More Apps (${more.length})`}>
+              {more.map((a) => (
+                <Link key={a.path} to={a.path}>
+                  {a.label}
+                </Link>
+              ))}
+            </Collapsible>
+          )}
         </div>
-        {more.length > 0 && (
-          <Collapsible label={`More Apps (${more.length})`}>
-            {more.map((a) => (
-              <Link
-                key={a.path}
-                to={a.path}
-                className="block text-sm text-gray-700 hover:text-blue-600 mb-1"
-              >
-                {a.label}
-              </Link>
-            ))}
-          </Collapsible>
-        )}
       </nav>
     </aside>
   );
