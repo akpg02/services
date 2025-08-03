@@ -5,8 +5,11 @@ on:
     branches:
       - master
     paths:
-      - "packages/calendar/availability/**"
+      - 'packages/calendar/availability/**'
   workflow_dispatch:
+
+env:
+  AUTO_DEPLOY: ${{ vars.AUTO_DEPLOY }}
 
 defaults:
   run:
@@ -32,7 +35,10 @@ jobs:
     name: Deploy to AWS (manual only)
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch'
+    if: >
+      (github.event_name == 'push' && env.AUTO_DEPLOY == 'true')
+      ||
+      github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
