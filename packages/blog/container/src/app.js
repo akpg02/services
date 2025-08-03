@@ -1,21 +1,21 @@
-import React, { Suspense, lazy } from "react";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import React, { Suspense, lazy } from 'react';
+import { Routes, Route, Link, Outlet } from 'react-router-dom';
 
-const Author = lazy(() => import("author/AuthorApp"));
-const Categories = lazy(() => import("categories/CategoriesApp"));
-const Comments = lazy(() => import("comments/CommentsApp"));
-const Newsletters = lazy(() => import("newsletters/NewslettersApp"));
-const Post = lazy(() => import("post/PostApp"));
-const Posts = lazy(() => import("posts/PostsApp"));
-const Related = lazy(() => import("related/RelatedApp"));
-const Search = lazy(() => import("search/SearchApp"));
-const Social = lazy(() => import("social/SocialApp"));
+const Author = lazy(() => import('author/AuthorApp'));
+const Categories = lazy(() => import('categories/CategoriesApp'));
+const Comments = lazy(() => import('comments/CommentsApp'));
+const Newsletters = lazy(() => import('newsletters/NewslettersApp'));
+const Post = lazy(() => import('post/PostApp'));
+const Posts = lazy(() => import('posts/PostsApp'));
+const Related = lazy(() => import('related/RelatedApp'));
+const Search = lazy(() => import('search/SearchApp'));
+const Social = lazy(() => import('social/SocialApp'));
 
 function BlogLayout() {
-  const prefix = window.location.pathname.startsWith("/blog") ? "/blog" : "";
+  const prefix = window.location.pathname.startsWith('/blog') ? '/blog' : '';
   return (
     <>
-      <nav style={{ padding: 10, borderBottom: "1px solid #ccc" }}>
+      <nav style={{ padding: 10, borderBottom: '1px solid #ccc' }}>
         <Link to={`${prefix}/categories`} style={{ marginRight: 10 }}>
           Categories
         </Link>
@@ -48,7 +48,7 @@ export default function App() {
     <>
       <Suspense fallback={<div>Loading Blog…</div>}>
         <Routes>
-          <Route path="" element={<BlogLayout />}>
+          <Route path="/*" element={<BlogLayout />}>
             <Route index element={<div>Blog landing page</div>} />
             <Route path="author" element={<Author />} />
             <Route path="categories" element={<Categories />} />

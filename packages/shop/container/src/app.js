@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { lazy, Suspense, useEffect } from 'react';
 import {
   Routes,
   Route,
@@ -6,28 +6,28 @@ import {
   Navigate,
   Outlet,
   useNavigate,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-const ProductsPage = lazy(() => import("products/ProductsApp"));
-const CartPage = lazy(() => import("cart/CartApp"));
-const DashboardPage = lazy(() => import("dashboard/DashboardApp"));
-const ReviewsPage = lazy(() => import("reviews/ReviewsApp"));
-const ChatPage = lazy(() => import("chat/ChatApp"));
-const CheckoutPage = lazy(() => import("checkout/CheckoutApp"));
-const OrdersPage = lazy(() => import("orders/OrdersApp"));
-const ProductPage = lazy(() => import("product/ProductApp"));
-const PaymentsPage = lazy(() => import("payments/PaymentsApp"));
-const SearchPage = lazy(() => import("search/SearchApp"));
-const WishlistPage = lazy(() => import("wishlist/WishlistApp"));
+const ProductsPage = lazy(() => import('products/ProductsApp'));
+const CartPage = lazy(() => import('cart/CartApp'));
+const DashboardPage = lazy(() => import('dashboard/DashboardApp'));
+const ReviewsPage = lazy(() => import('reviews/ReviewsApp'));
+const ChatPage = lazy(() => import('chat/ChatApp'));
+const CheckoutPage = lazy(() => import('checkout/CheckoutApp'));
+const OrdersPage = lazy(() => import('orders/OrdersApp'));
+const ProductPage = lazy(() => import('product/ProductApp'));
+const PaymentsPage = lazy(() => import('payments/PaymentsApp'));
+const SearchPage = lazy(() => import('search/SearchApp'));
+const WishlistPage = lazy(() => import('wishlist/WishlistApp'));
 const RecommendationsPage = lazy(() =>
-  import("recommendations/RecommendationsApp")
+  import('recommendations/RecommendationsApp')
 );
 
 function ShopLayout() {
-  const prefix = window.location.pathname.startsWith("/shop") ? "/shop" : "";
+  const prefix = window.location.pathname.startsWith('/shop') ? '/shop' : '';
   return (
     <>
-      <nav style={{ padding: 10, borderBottom: "1px solid #ccc" }}>
+      <nav style={{ padding: 10, borderBottom: '1px solid #ccc' }}>
         <Link to={`${prefix}/products`} style={{ marginRight: 10 }}>
           Products
         </Link>
@@ -78,7 +78,7 @@ export default function ShopPage({ isSignedIn }) {
 
   useEffect(() => {
     if (isSignedIn) {
-      navigate("/dashboard");
+      navigate('/dashboard');
     }
   }, [isSignedIn, navigate]);
 
@@ -86,7 +86,7 @@ export default function ShopPage({ isSignedIn }) {
     <>
       <Suspense fallback={<div>Loading...Container</div>}>
         <Routes>
-          <Route path="" element={<ShopLayout />}>
+          <Route path="/*" element={<ShopLayout />}>
             <Route
               index
               element={<div>This will be the shop landing page.</div>}

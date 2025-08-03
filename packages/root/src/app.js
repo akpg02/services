@@ -11,6 +11,7 @@ const AuthApp = lazy(() => import('auth/AuthApp'));
 
 export default function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
+
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     setIsSignedIn(false);
@@ -26,19 +27,24 @@ export default function App() {
               <Layout isSignedIn={isSignedIn} onSignOut={handleLogout} />
             }
           >
-            <Route index element={<PortfolioApp />} />
+            <Route index element={<div>Root start page</div>} />
+            <Route
+              path="portfolio/*"
+              element={<PortfolioApp isStandalone={false} />}
+            />
             <Route
               path="shop/*"
-              element={<ShopApp isSignedIn={isSignedIn} />}
+              element={<ShopApp isSignedIn={isSignedIn} isStandalone={false} />}
             />
-            <Route path="portfolio/*" element={<PortfolioApp />} />
             <Route
               path="blog/*"
-              element={<BlogApp isSignedIn={isSignedIn} />}
+              element={<BlogApp isSignedIn={isSignedIn} isStandalone={false} />}
             />
             <Route
               path="calendar/*"
-              element={<CalendarApp isSignedIn={isSignedIn} />}
+              element={
+                <CalendarApp isSignedIn={isSignedIn} isStandalone={false} />
+              }
             />
             <Route
               path="auth/*"
@@ -46,6 +52,7 @@ export default function App() {
                 <AuthApp
                   onSignIn={() => setIsSignedIn(true)}
                   isSignedIn={isSignedIn}
+                  isStandalone={false}
                 />
               }
             />

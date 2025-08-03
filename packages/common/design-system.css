@@ -1,6 +1,16 @@
 /* design-system.css */
 
 /* 1) Custom properties for theming */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+/* 1) Custom properties for theming */
 :root {
   /* Dimensions */
   --sidebar-width: 16rem;
@@ -18,51 +28,25 @@
   --space-md: 1rem;
   --space-lg: 1.5rem;
   --space-xl: 2rem;
-  --space-xxl: 4rem;
 }
 
-/* 1) Root application container */
-.app-container {
-  display: flex;
-  height: 100vh;
+.service-container {
+  margin-left: 1rem;
 }
 
-/* 2) Main content wrapper (next to sidebar) */
-.content-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.service-header {
+  padding: 1rem;
 }
 
-/* 3) Page header */
-.page-header {
-  flex-shrink: 0;
-  padding: 1rem; /* Tailwind p-4 */
-  border-bottom: 1px solid #e5e7eb; /* Tailwind border-gray-200 */
+.service-main-iso {
+  padding: 1rem 2rem;
 }
 
-/* 4) Main scrollable area */
-.main-content {
-  flex: 1;
-  overflow: auto;
-  padding: 1rem; /* Tailwind p-4 */
-  background: #f9fafb; /* optional light background */
-}
-
-/* 5) Loading fallback styling */
-.loading-fallback {
-  padding: 2rem;
-  text-align: center;
-  font-size: 1rem;
-  color: #6b7280; /* Tailwind gray-500 */
-}
-
-/* 1) Header container */
 .site-header {
   display: flex;
   justify-content: flex-end;
-  padding: 1rem;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem; /* Tailwind p-4 */
+  border-bottom: 1px solid #e5e7eb; /* Tailwind border-b + border-gray-200 */
   background: #fff;
 }
 
@@ -77,7 +61,6 @@
   border: none;
   cursor: pointer;
   padding: 0; /* remove default padding */
-  padding-right: var(--space-xxl);
 }
 
 /* 3) Hover state */
@@ -91,50 +74,44 @@
   outline: none; /* Tailwind focus:outline-none */
 }
 
-/* 1) Container spacing */
-.collapsible {
-  margin-top: var(--space-sm); /* 0.5rem */
+.line {
+  width: 30px; /* Set the width of the line */
+  height: 4px; /* Set the thickness of the line */
+  background-color: var(--color-text-muted); /* Set the color of the line */
+  margin: 6px 0; /* Add spacing between the lines */
 }
 
-/* 2) Toggle button */
-.collapsible-toggle {
+/* 2) Layout containers */
+.app-container {
   display: flex;
-  align-items: center;
-  background: transparent;
-  border: none;
-  padding: var(--space-xs); /* 0.25rem */
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
+  height: 100vh;
+  margin-left: var(--sidebar-width);
+}
+.content-container,
+.main-content {
+  flex: 1;
+  overflow: auto;
+  padding: var(--space-md);
+  width: 100%;
 }
 
-/* 3) Label spacing */
-.collapsible-toggle .toggle-label {
-  margin-right: var(--space-sm); /* 0.5rem */
-}
-
-/* 4) Icon sizing */
-.collapsible-toggle svg {
-  width: 1rem;
-  height: 1rem;
-}
-
-/* 5) Collapsed content */
-.collapsible-content {
-  padding-left: var(--space-md); /* 1rem */
-  margin-top: var(--space-xs); /* 0.25rem */
-}
-
-/* 2) Sidebar container */
+/* 3) Sidebar container */
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
   width: var(--sidebar-width);
   background: var(--color-sidebar-bg);
   border-right: 1px solid var(--color-sidebar-border);
   display: flex;
   flex-direction: column;
+  z-index: 1000;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
-/* 3) Logo section */
+/* 4) Logo section */
 .sidebar-logo {
   display: flex;
   flex-direction: column;
@@ -159,7 +136,7 @@
   color: var(--color-text-muted);
 }
 
-/* 4) Navigation area */
+/* 5) Navigation area */
 .sidebar-nav {
   flex: 1;
   overflow-y: auto;
@@ -168,7 +145,7 @@
   flex-direction: column;
 }
 
-/* 5) Navigation groups */
+/* 6) Navigation groups */
 .nav-group {
   margin-bottom: var(--space-lg);
 }
@@ -179,7 +156,7 @@
   color: var(--color-text-muted);
 }
 
-/* 6) Links and buttons in nav */
+/* 7) Links and buttons in nav */
 .sidebar-nav a,
 .sidebar-nav button {
   display: block;
@@ -198,7 +175,7 @@
   color: var(--color-text-hover);
 }
 
-/* 7) Collapsible toggle styling */
+/* 8) Collapsible toggle styling */
 .collapsible-toggle {
   font-weight: bold;
   display: flex;
@@ -209,7 +186,7 @@
   margin-left: var(--space-xs);
 }
 
-/* 8) Utility margin helpers */
+/* 9) Utility margin helpers */
 .mt-1 {
   margin-top: var(--space-xs);
 }
@@ -223,9 +200,49 @@
   margin-bottom: var(--space-sm);
 }
 
-/* 9) Responsive override */
+/* 10) Collapsed state */
+.sidebar.collapsed {
+  transform: translateX(calc(-1 * var(--sidebar-width)));
+}
+
+.content-container.collapsed {
+  margin-left: 0;
+}
+
+/* 11) Toggle button for responsive */
+.sidebar-toggle {
+  position: fixed;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 1100;
+  background: var(--color-sidebar-bg);
+  border: none;
+  font-size: 1.5rem;
+  padding: var(--space-xs);
+  cursor: pointer;
+  display: none;
+}
+
+/* 12) Responsive overrides */
 @media (max-width: 768px) {
+  .app-container {
+    margin-left: 0;
+  }
+
   .sidebar {
-    width: 100%;
+    transform: translateX(calc(-1 * var(--sidebar-width)));
+  }
+  .sidebar-toggle {
+    display: block;
+  }
+  .content-container,
+  .main-content {
+    margin-left: 0;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .content-container.open {
+    margin-left: var(--sidebar-width);
   }
 }

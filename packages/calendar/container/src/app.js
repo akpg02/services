@@ -1,30 +1,30 @@
-import React, { Suspense, lazy } from "react";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import React, { Suspense, lazy } from 'react';
+import { Routes, Route, Link, Outlet } from 'react-router-dom';
 
-const Admin = lazy(() => import("admin/AdminApp"));
-const Analytics = lazy(() => import("analytics/AnalyticsApp"));
-const Availability = lazy(() => import("availability/AvailabilityApp"));
-const Collaboration = lazy(() => import("collaboration/CollaborationApp"));
-const EventCreation = lazy(() => import("event_creation/EventCreationApp"));
-const EventDetails = lazy(() => import("event_details/EventDetailsApp"));
-const EventList = lazy(() => import("event_list/EventListApp"));
-const Integrations = lazy(() => import("integrations/IntegrationsApp"));
-const Invitations = lazy(() => import("invitations/InvitationsApp"));
-const Search = lazy(() => import("search/SearchApp"));
-const Settings = lazy(() => import("settings/SettingsApp"));
-const Views = lazy(() => import("views/ViewsApp"));
-const Notifications = lazy(() => import("notifications/NotificationsApp"));
+const Admin = lazy(() => import('admin/AdminApp'));
+const Analytics = lazy(() => import('analytics/AnalyticsApp'));
+const Availability = lazy(() => import('availability/AvailabilityApp'));
+const Collaboration = lazy(() => import('collaboration/CollaborationApp'));
+const EventCreation = lazy(() => import('event_creation/EventCreationApp'));
+const EventDetails = lazy(() => import('event_details/EventDetailsApp'));
+const EventList = lazy(() => import('event_list/EventListApp'));
+const Integrations = lazy(() => import('integrations/IntegrationsApp'));
+const Invitations = lazy(() => import('invitations/InvitationsApp'));
+const Search = lazy(() => import('search/SearchApp'));
+const Settings = lazy(() => import('settings/SettingsApp'));
+const Views = lazy(() => import('views/ViewsApp'));
+const Notifications = lazy(() => import('notifications/NotificationsApp'));
 const RecurrenceRules = lazy(() =>
-  import("recurrence_rules/RecurrenceRulesApp")
+  import('recurrence_rules/RecurrenceRulesApp')
 );
 
 function CalendarLayout() {
-  const prefix = window.location.pathname.startsWith("/calendar")
-    ? "/calendar"
-    : "";
+  const prefix = window.location.pathname.startsWith('/calendar')
+    ? '/calendar'
+    : '';
   return (
     <>
-      <nav style={{ padding: 10, borderBottom: "1px solid #ccc" }}>
+      <nav style={{ padding: 10, borderBottom: '1px solid #ccc' }}>
         <Link to={`${prefix}/admin`} style={{ marginRight: 10 }}>
           Admin
         </Link>

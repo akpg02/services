@@ -1,12 +1,23 @@
 // src/components/Layout.jsx
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './Header';
-import Sidebar from './Sidebar';
+import Header from './header';
+import Sidebar from './sidebar';
 
 export default function Layout({ isSignedIn, onSignOut }) {
   return (
     <div className="app-container">
+      <button
+        className="sidebar-toggle"
+        onClick={() => {
+          const sb = document.querySelector('.sidebar');
+          sb.classList.toggle('open');
+        }}
+      >
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </button>
       <Sidebar isSignedIn={isSignedIn} onSignOut={onSignOut} />
 
       <div className="content-container">

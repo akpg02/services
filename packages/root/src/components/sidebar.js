@@ -66,11 +66,13 @@ export default function Sidebar({ isSignedIn, onSignOut }) {
 
   return (
     <aside className="sidebar">
-      <div className="sidebar-logo">
-        <img src={logo} alt="Logo" />
-        <p>Grace Akpan</p>
-        <p>Web Developer</p>
-      </div>
+      <Link key="/" to="/">
+        <div className="sidebar-logo">
+          <img src={logo} alt="Logo" />
+          <p>Grace Akpan</p>
+          <p>Web Developer</p>
+        </div>
+      </Link>
 
       <nav className="sidebar-nav">
         <div className="nav-group">
