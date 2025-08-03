@@ -27,7 +27,7 @@ export default function App() {
               <Layout isSignedIn={isSignedIn} onSignOut={handleLogout} />
             }
           >
-            <Route index element={<div>Root start page</div>} />
+            <Route index element={<PortfolioApp isStandalone={false} />} />
             <Route
               path="portfolio/*"
               element={<PortfolioApp isStandalone={false} />}
