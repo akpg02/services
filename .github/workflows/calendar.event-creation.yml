@@ -5,12 +5,12 @@ on:
     branches:
       - master
     paths:
-      - "packages/calendar/event-creation/**"
+      - 'packages/calendar/event-creation/**'
   workflow_dispatch:
 
 env:
-  AUTO_DEPLOY: ${{ vars.AUTO_DEPLOY }} 
-  
+  AUTO_DEPLOY: ${{ vars.AUTO_DEPLOY }}
+
 defaults:
   run:
     working-directory: packages/calendar/event-creation
@@ -36,7 +36,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: >
-      (github.event_name == 'push' && env.AUTO_DEPLOY == 'true')
+      (github.event_name == 'push' && vars.AUTO_DEPLOY == 'true')
       ||
       github.event_name == 'workflow_dispatch'
     steps:

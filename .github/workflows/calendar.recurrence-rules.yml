@@ -36,7 +36,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: g>
-      (github.event_name == 'push' && env.AUTO_DEPLOY == 'true')
+      (github.event_name == 'push' && vars.AUTO_DEPLOY == 'true')
       ||
       github.event_name == 'workflow_dispatch'
     steps:
